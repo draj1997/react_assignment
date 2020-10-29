@@ -1,0 +1,39 @@
+var map = {
+	"./bitmap-1.png": 110,
+	"./bitmap-2.png": 111,
+	"./bitmap-3.png": 112,
+	"./bitmap.png": 113,
+	"./group-11.png": 114,
+	"./group-18.png": 115,
+	"./group-2.png": 48,
+	"./group-3.png": 116,
+	"./group-4.png": 49,
+	"./group-6.png": 50,
+	"./group-copy-2.png": 51,
+	"./group-copy.png": 52,
+	"./message-icon.png": 53,
+	"./oval.png": 54,
+	"./save-icon.png": 55,
+	"./star-icon.png": 56
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 33;
